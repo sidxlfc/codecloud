@@ -32,13 +32,10 @@ $x=fwrite($handle,$fileData);
 
 if($x!=NULL)
 {
-	#$output=exec('gcc -g -O -c '.$filePath);
-	exec('gcc -c $filePath  -o /var/lib/openshift/52106d8ce0b8cd5b44000013/app-root/data/$email/something.o ',$output,$return);
-	echo $output;
-	echo $return;
+
     
-    #header("Location: myFiles.php");
-	#		die();
+    header("Location: myFiles.php");
+			die();
 
 }else
 {
