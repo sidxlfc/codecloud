@@ -7,7 +7,7 @@
 <?php 
 
 <?php 
-$host = "127.3.39.129:3306"; 
+$host = "127.3.39.129"; 
 $dbname = "codecloud"; 
 $userid = "adminxl5QcED"; 
 $pwd = "Qim_GuYLD2a9";
