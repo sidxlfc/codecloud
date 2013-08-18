@@ -12,14 +12,19 @@ $passwordHash = sha1($password);
 
 
  try {
-                require_once 'conf.php';
-                $conn = mysqlConnector();
-                $query="SELECT userPassword FROM user_data WHERE userEmail='$email' ";
-          echo $query;     
-        if($targetPassword = $conn->query($query) or die($conn->error)) 
+        require_once 'conf.php';
+        $conn = mysqlConnector();
+        $query="SELECT userPassword FROM user_data WHERE userEmail='$email' ";
+             
+        if($result = $conn->query($query) or die($conn->error)) 
         {	
-        	echo "password matching";
-        	echo  $targetPassword.userPassword;
+        	
+    		while($row = $result->fetch_object()) 
+    		{
+        	$targetPassword= $row -> userPassword;
+        	echo $targetPassword;
+        	}
+    
 		}
 		
 		else 
