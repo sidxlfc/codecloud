@@ -18,6 +18,7 @@ $passwordHash = sha1($password);
                 
         if($targetPassword = $conn->query($query) or die($conn->error)) 
         {
+        	echo "sup". $targetPassword;
 		if ($passwordHash == $targetPassword) {
 			echo " Authentication Successful! Redirecting.... ";
 			echo $targetPassword;
