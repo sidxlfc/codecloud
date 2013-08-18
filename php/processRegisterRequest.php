@@ -18,8 +18,8 @@ else
  try {
                 require_once 'conf.php';
                 $conn = mysqlConnector();
-             
-                mkdir("$OPENSHIFT_DATA_DIR/$email",0777,true);
+             	$path= "$OPENSHIFT_DATA_DIR/".$email;
+                mkdir($path,0777,true);
 
 				$query = "INSERT INTO user_data(userEmail,userPassword) VALUES('$email' , '$passwordHash' )";
 	
