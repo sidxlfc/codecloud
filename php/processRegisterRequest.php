@@ -23,16 +23,17 @@ else
 
 				$query = "INSERT INTO user_data(userEmail,userPassword) VALUES('$email' , '$passwordHash' )";
 	
-	if($updateDb = $conn->query($query) or die($conn->error)) {
-		echo "Congrats! <a href=\"index.php\" > Go back to home and login </a> ! ";
-		
-               
-}
+				if($updateDb = $conn->query($query) or die($conn->error)) 
+				{
+				echo "Congrats! <a href=\"index.php\" > Go back to home and login </a> ! ";
+				}
 
-        } catch(PDOException $e) {
+     } 
+catch(PDOException $e) 
+{
                 echo 'ERROR: ' . $e->getMessage();
 
-        }
+}
 
 
 
