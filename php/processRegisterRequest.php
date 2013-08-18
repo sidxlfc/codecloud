@@ -11,6 +11,7 @@ $email= $_GET["email"];
 $password = $_GET["password"];
 $confirmPassword = $_GET["confirmPassword"];
 $passwordHash=sha1($password);
+echo $password;
 if ($password !== $confirmPassword)
 	echo "Passwords do not match kindly go back and re enter.";
 else
