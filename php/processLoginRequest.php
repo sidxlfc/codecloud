@@ -15,9 +15,9 @@ $passwordHash = sha1($password);
  try {
         require_once 'conf.php';
         $conn = mysqlConnector();
-        $query="SELECT userPassword FROM user_data WHERE userEmail='$email' ";
+        $query="SELECT * FROM user_data WHERE userEmail='$email' ";
 		$result= $conn -> query ($query) or die ($mysql -> error);
-		echo "call to result ";
+		
        	if($result) {
         while($row = $result->fetch_object()) {
         $userPassword = $row-> userPassword;
