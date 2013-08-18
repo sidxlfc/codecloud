@@ -5,7 +5,7 @@
 </head>
 <body>
 
-<?php 
+<? 
 
 $email= $_GET["email"];
 $password = $_GET["password"];
@@ -16,24 +16,23 @@ $passwordHash = sha1($password);
         require_once 'conf.php';
         $conn = mysqlConnector();
         $query="SELECT userPassword FROM user_data WHERE userEmail='$email' ";
+		$result= $mysql -> query ($query) or die ($mysql -> error);
+
+       	if($result) {
+        while($row = $result->fetch_object()) {
+        $userPassword = $row-> userPassword;
+        echo $userPassword;
+
+        }
+    }
+    else
+    	{
+    		echo "something went wrong";
+    	}
              
-        if($result = $conn->query($query) or die($conn->error)) 
-        {	
-        	echo "hey1";
-        	echo $result;
-    		$row = $result->fetch_object(); 
-    		
-    		echo $row;
-        	$targetPassword= $row -> userPassword;
-        	echo $targetPassword;
-        	
-    
-		}
+       
 		
-		else 
-		{
-		echo "Sorry wrong username and/or password second loop";
-		}
+	
 	
 
 
@@ -45,7 +44,7 @@ $passwordHash = sha1($password);
         }
 
 
- ?>
+?>
 
 </body>
 </html>
