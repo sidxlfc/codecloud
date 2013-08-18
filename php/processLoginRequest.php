@@ -12,21 +12,14 @@ $passwordHash = sha1($password);
  try {
         require 'conf.php';
         $conn = mysqlConnector();
-        $query= "SELECT * FROM user_data WHERE userEmail='$email' ";
-		$result= $conn -> query($query) or die ($conn -> error);
-		echo "result";
-		print_r($result);
+       # $query= "SELECT * FROM user_data WHERE userEmail='$email'";
+   
 
-
-    else
-    	{
-    		echo "something went wrong";
-    	}
-             
-       
-		
-	
-	
+	$sth = $conn->prepare("SELECT * FROM user_data WHERE userEmail='$email'");
+	$sth->execute();
+   	$result = $sth->fetch(PDO::FETCH_OBJ);
+	print $result->userPassword;
+	print("\n");
 
 
     }
