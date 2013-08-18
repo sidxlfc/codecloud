@@ -11,7 +11,7 @@ $email= $_GET["email"];
 $password = $_GET["password"];
 $confirmPassword = $_GET["confirmPassword"];
 $passwordHash=sha1($password);
-echo $password;
+
 if ($password !== $confirmPassword)
 	echo "Passwords do not match kindly go back and re enter.";
 else
@@ -21,7 +21,7 @@ else
                 require_once 'conf.php';
                 $conn = mysqlConnector();
              
-                #mkdir("~/$email",0777,true);
+                mkdir("~/$email",0777,true);
 
 	$query = "INSERT INTO user_data(userEmail,userPassword) VALUES('$email' , '$passwordHash' )";
 	
