@@ -9,10 +9,10 @@ $email = $_SESSION['sessionVar'];
 $dir    = '/var/lib/openshift/52106d8ce0b8cd5b44000013/app-root/data/'.$email."/";
 echo $dir;
 $files1 = scandir($dir);
-$files2 = scandir($dir, 1);
 
-print_r($files1);
-print_r($files2);
+foreach ($files1 as $key => $value) {
+	echo "$(key[value])";
+}
 
 ?>
 </head>
