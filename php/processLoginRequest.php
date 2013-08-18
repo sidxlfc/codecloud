@@ -24,6 +24,7 @@ $passwordHash = sha1($password);
         echo $userPassword;
 
         }
+        $result->close();
      
     }
     else
