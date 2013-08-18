@@ -20,13 +20,17 @@ $password = $_GET["password"];
 		if ($(sha1($password))== $targetPassword) {
 			echo " Authentication Successful! Redirecting.... ";
 		}
-		
-               
-		}
-		else 
+			else 
 	{
 	echo "Sorry wrong username and/or password";
 	}
+               
+		}
+			else 
+	{
+	echo "Sorry wrong username and/or password";
+	}
+	
 
 
     }
