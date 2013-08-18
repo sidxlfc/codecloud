@@ -1,29 +1,36 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-<?php 
+<?php
+ try {
+                require_once 'conf.php';
+                $conn = mysqlConnector();
+                $stmt = $conn->prepare('SELECT * FROM demo');
+                $stmt->execute();
 
-<?php 
-$host = "127.11.226.2"; 
-$dbname = "codecloud"; 
-$userid = "adminxl5QcED"; 
-$pwd = "Qim_GuYLD2a9";
-
-$DB = new PDO("mysql:host=$host; dbname=$dbname", $userid, $pwd);
-
-$result= $DB -> query ("SELECT * FROM user_data" ) or die ($DB -> error);
-
-$rows = array();
-while($r = $result->fetch_object()) {
-  $rows[] = $r;
-}
-
-echo json_encode($rows);
+                while($row = $stmt->fetch()) {
+                        print_r($row);          
+                }
 
 
- ?>
-</body>
-</html>
+        } catch(PDOException $e) {
+                echo 'ERROR: ' . $e->getMessage();
+        }
+
+
+?>
+<?php
+ try {
+                require_once 'conf.php';
+                $conn = mysqlConnector();
+                $stmt = $conn->prepare('SELECT * FROM user_data ');
+                $stmt->execute();
+
+                while($row = $stmt->fetch()) {
+                        print_r($row);          
+                }
+
+
+        } catch(PDOException $e) {
+                echo 'ERROR: ' . $e->getMessage();
+        }
+
+
+?>
