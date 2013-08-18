@@ -2,9 +2,6 @@
 <html>
 <head>
 	<title></title>
-</head>
-<body>
-
 <? 
 
 $email= $_GET["email"];
@@ -15,7 +12,7 @@ $passwordHash = sha1($password);
  try {
         require_once 'conf.php';
         $conn = mysqlConnector();
-        $query="SELECT * FROM user_data WHERE userEmail='$email' ";
+        $query= "SELECT * FROM user_data WHERE userEmail='$email' ";
 		$result= $conn -> query($query) or die ($conn -> error);
 		
        	if($result) {
@@ -47,6 +44,11 @@ $passwordHash = sha1($password);
 
 
 ?>
+	
+</head>
+<body>
+
+
 
 </body>
 </html>
