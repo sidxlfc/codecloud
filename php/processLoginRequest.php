@@ -15,18 +15,21 @@ $password = $_GET["password"];
                 $conn = mysqlConnector();
                 $query="SELECT userPassword from user_data ";
 
-        if($targetPassword = $conn->query($query) or die($conn->error)) {
-		if (sha1($password)== $targetPassword) {
+        if($targetPassword = $conn->query($query) or die($conn->error)) 
+        {
+		if ($(sha1($password))== $targetPassword) {
 			echo " Authentication Successful! Redirecting.... ";
 		}
 		
                
-}else {
+		}
+		else 
+	{
 	echo "Sorry wrong username and/or password";
-}
+	}
 
 
-        }
+    }
 
 
          catch(PDOException $e) {
