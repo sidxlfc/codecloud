@@ -12,7 +12,7 @@ $files1 = scandir($dir);
 
 foreach ($files1 as  $value) {
 	echo "\n";
-	echo "\n $value  \n";
+	echo "$value";
 	echo "\n;"
 	}
 
