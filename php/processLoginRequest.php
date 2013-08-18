@@ -14,9 +14,9 @@ $passwordHash = sha1($password);
         $conn = mysqlConnector();
         $query= "SELECT * FROM user_data WHERE userEmail='$email' ";
 		$result= $conn -> query($query) or die ($conn -> error);
-		
+		print_r($result);	
       $rs = $result->fetch(PDO::FETCH_ASSOC);
-      echo $rs[0];
+      print_r($rs);
 
 
     else
