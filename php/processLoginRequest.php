@@ -13,15 +13,9 @@ $password = $_GET["password"];
  try {
                 require_once 'conf.php';
                 $conn = mysqlConnector();
-                $query="SELECT userPassword from user_data "
+                $query="SELECT userPassword from user_data ";
 
-
-        } catch(PDOException $e) {
-                echo 'ERROR: ' . $e->getMessage();
-        }
-
-
-if($targetPassword = $conn->query($query) or die($conn->error)) {
+        if($targetPassword = $conn->query($query) or die($conn->error)) {
 		if (sha1($password)== $targetPassword) {
 			echo " Authentication Successful! Redirecting.... ";
 		}
@@ -30,6 +24,17 @@ if($targetPassword = $conn->query($query) or die($conn->error)) {
 }else {
 	echo "Sorry wrong username and/or password";
 }
+
+
+        }
+
+
+         catch(PDOException $e) {
+                echo 'ERROR: ' . $e->getMessage();
+        }
+
+
+
 
 
 
