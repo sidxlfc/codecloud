@@ -5,20 +5,14 @@
 <?php 
 
 session_start();
-  $email = $_SESSION['sessionVar'];
-  if ($handle = opendir('/var/lib/openshift/52106d8ce0b8cd5b44000013/app-root/runtime/repo/php/userData/$email')) {
-    echo "Directory handle: $handle\n";
-    echo "Entries:\n";
+$email = $_SESSION['sessionVar'];
+$dir    = '/var/lib/openshift/52106d8ce0b8cd5b44000013/app-root/runtime/repo/php/userData/$email';
+$files1 = scandir($dir);
+$files2 = scandir($dir, 1);
 
-    /* This is the correct way to loop over the directory. */
-    while (false !== ($entry = readdir($handle))) {
-        echo "$entry\n";
-    }
+print_r($files1);
+print_r($files2);
 
-    
-
-    closedir($handle);
-}
 ?>
 </head>
 <body>
