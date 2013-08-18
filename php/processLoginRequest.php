@@ -14,13 +14,19 @@ $passwordHash = sha1($password);
         $conn = mysqlConnector();
        # $query= "SELECT * FROM user_data WHERE userEmail='$email'";
    
-
+ 	session_start();
 	$sth = $conn->prepare("SELECT * FROM user_data WHERE userEmail='$email'");
 	$sth->execute();
    	$result = $sth->fetch(PDO::FETCH_OBJ);
 	$targetPassword=  $result->userPassword;
 		if ($targetPassword == $passwordHash) {
 			echo "Match! Redirecting! ";
+			
+ 			 
+  			 $_SESSION['sessionVar'] = $email;
+  			
+			header("Location: myFiles.php");
+			die();
 		}
 		else
 		{
