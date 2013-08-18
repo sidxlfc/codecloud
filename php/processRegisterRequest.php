@@ -26,7 +26,7 @@ else
 	$query = "INSERT INTO user_data(userEmail,userPassword) VALUES('$email' , '$passwordHash' )";
 	
 	if($updateDb = $conn->query($query) or die($conn->error)) {
-		echo "Congrats!";
+		echo "Congrats! Go <a href ="index.php"> here</a> to login! ";
                
 }
 
