@@ -11,4 +11,3 @@ function mysqlConnector(){
     return $dbh;
 }
          ?>
-s
