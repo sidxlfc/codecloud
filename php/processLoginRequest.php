@@ -17,14 +17,14 @@ $passwordHash = sha1($password);
         $query="SELECT userPassword FROM user_data WHERE userEmail='$email' ";
              
         if($result = $conn->query($query) or die($conn->error)) 
-        {	echo "get rows";
+        {	
         	
-    		while($row = $result->fetch_object()) 
-    		{
+    		$row = $result->fetch_object(); 
+    		
     		echo $row;
         	$targetPassword= $row -> userPassword;
         	echo $targetPassword;
-        	}
+        	
     
 		}
 		
