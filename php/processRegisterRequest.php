@@ -25,7 +25,7 @@ else
 	
 	if($updateDb = $conn->query($query) or die($conn->error)) {
 		echo "Congrats! <a href=\"index.php\" > Go back to home and login </a> ! ";
-		echo getcwd();
+		
                
 }
 
