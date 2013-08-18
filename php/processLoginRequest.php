@@ -4,6 +4,7 @@
 	<title></title>
 </head>
 <body>
+
 <?php 
 
 $email= $_GET["email"];
@@ -18,7 +19,8 @@ $passwordHash = sha1($password);
              
         if($result = $conn->query($query) or die($conn->error)) 
         {	
-        	
+        	echo "hey1";
+        	echo $result;
     		$row = $result->fetch_object(); 
     		
     		echo $row;
@@ -44,5 +46,6 @@ $passwordHash = sha1($password);
 
 
  ?>
+
 </body>
 </html>
