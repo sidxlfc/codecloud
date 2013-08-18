@@ -17,7 +17,8 @@ $passwordHash = sha1($password);
                 $query="SELECT userPassword FROM user_data WHERE userEmail='$email' ";
           echo $query;     
         if($targetPassword = $conn->query($query) or die($conn->error)) 
-        {
+        {	
+        	echo "password matching";
         	echo  $targetPassword;
 		}
 		
