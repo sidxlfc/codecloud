@@ -19,12 +19,12 @@ else
                 require_once 'conf.php';
                 $conn = mysqlConnector();
              
-                mkdir("/var/lib/openshift/52106d8ce0b8cd5b44000013/app-root/runtime/repo/php/$email",0777,true);
+                mkdir("/var/lib/openshift/52106d8ce0b8cd5b44000013/app-root/runtime/repo/php/userData/$email",0777,true);
 
 	$query = "INSERT INTO user_data(userEmail,userPassword) VALUES('$email' , '$passwordHash' )";
 	
 	if($updateDb = $conn->query($query) or die($conn->error)) {
-		echo "Congrats! Go back to home and login! ";
+		echo "Congrats! <a href="index.php" > Go back to home and login </a> ! ";
 		echo getcwd();
                
 }
