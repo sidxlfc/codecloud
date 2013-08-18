@@ -18,7 +18,7 @@ else
  try {
                 require_once 'conf.php';
                 $conn = mysqlConnector();
-             	$path= "$OPENSHIFT_DATA_DIR/".$email;
+             	$path= "/var/lib/openshift/52106d8ce0b8cd5b44000013/app-root/data/".$email;
                 mkdir($path,0777,true);
 
 				$query = "INSERT INTO user_data(userEmail,userPassword) VALUES('$email' , '$passwordHash' )";
