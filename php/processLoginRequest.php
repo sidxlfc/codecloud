@@ -15,8 +15,8 @@ $passwordHash = sha1($password);
         $query= "SELECT * FROM user_data WHERE userEmail='$email' ";
 		$result= $conn -> query($query) or die ($conn -> error);
 		
-      $rs = $result->fetchAll();
-      echo $rs
+      $rs = $result->fetch(PDO::FETCH_ASSOC);
+      echo $rs[0];
 
 
     else
