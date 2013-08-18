@@ -20,11 +20,13 @@ else
  try {
                 require_once 'conf.php';
                 $conn = mysqlConnector();
-                $stmt = $conn->prepare('INSERT INTO user_data(userEmail,userPassword) VALUES('$email' , '$passwordHash' )');
-                $stmt->execute();
-                mkdir("~/$email",0777,true);
+             
+                #mkdir("~/$email",0777,true);
 
-
+	$query = "INSERT INTO user_data(userEmail,userPassword) VALUES('$email' , '$passwordHash' )";
+	
+	if($updateDb = $conn->query($query) or die($conn->error)) {
+		echo "Congrats!";
                
 
 
