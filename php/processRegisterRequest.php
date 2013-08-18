@@ -28,7 +28,7 @@ else
 	if($updateDb = $conn->query($query) or die($conn->error)) {
 		echo "Congrats!";
                
-
+}
 
         } catch(PDOException $e) {
                 echo 'ERROR: ' . $e->getMessage();
