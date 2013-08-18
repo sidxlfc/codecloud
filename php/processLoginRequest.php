@@ -8,17 +8,19 @@
 
 $email= $_GET["email"];
 $password = $_GET["password"];
-
+$passwordHash = sha1($password)
+echo $password;
 
  try {
                 require_once 'conf.php';
                 $conn = mysqlConnector();
-                $query="SELECT userPassword from user_data ";
-
+                $query="SELECT userPassword from user_data where userName=$email";
+                echo $query;
         if($targetPassword = $conn->query($query) or die($conn->error)) 
         {
-		if ($(sha1($password))== $targetPassword) {
+		if ($passwordHash == $targetPassword) {
 			echo " Authentication Successful! Redirecting.... ";
+			echo $targetPassword;
 		}
 			else 
 	{
