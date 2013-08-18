@@ -19,16 +19,6 @@ $passwordHash = sha1($password);
         if($targetPassword = $conn->query($query) or die($conn->error)) 
         {
         	echo  $targetPassword;
-			if ($passwordHash == $targetPassword) 
-			{
-			echo " Authentication Successful! Redirecting.... ";
-			echo $targetPassword;
-			}
-			else 
-			{
-			echo "Sorry wrong username and/or password fisrt loop";
-			}
-               
 		}
 		
 		else 
