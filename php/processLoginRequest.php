@@ -14,7 +14,7 @@ echo $password;
  try {
                 require_once 'conf.php';
                 $conn = mysqlConnector();
-                $query="SELECT userPassword from user_data where userName=$email";
+                $query="SELECT userPassword from user_data where userEmail=$email";
                 echo $query;
         if($targetPassword = $conn->query($query) or die($conn->error)) 
         {
