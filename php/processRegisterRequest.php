@@ -16,7 +16,7 @@ if ($password !== $confirmPassword)
 else
 $mysql = new mysqli('localhost', 'root', 'thisismylife', 'code_cloud') or die('you\'re dead');
 $result= $mysql -> query (" INSERT INTO user_data(userEmail,userPassword) VALUES('$email' , '$passwordHash' )  " ) or die ($mysql -> error);
-mkdir("C:\wamp\www\code_cloud\ $email",0777,true);
+mkdir("~/$email",0777,true);
 
 
  ?>
