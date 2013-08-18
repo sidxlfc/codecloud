@@ -18,8 +18,14 @@ $passwordHash = sha1($password);
 	$sth = $conn->prepare("SELECT * FROM user_data WHERE userEmail='$email'");
 	$sth->execute();
    	$result = $sth->fetch(PDO::FETCH_OBJ);
-	print $result->userPassword;
-	print("\n");
+	$targetPassword=  $result->userPassword;
+		if ($targetPassword == $passwordHash) {
+			echo "Match! Redirecting! ";
+		}
+		else
+		{
+			echo "Sorry the email and password do not match ";
+		}
 
 
     }
