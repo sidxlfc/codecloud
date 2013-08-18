@@ -21,16 +21,17 @@ else
              
                 mkdir("/var/lib/openshift/52106d8ce0b8cd5b44000013/app-root/runtime/repo/php/userData/$email",0777,true);
 
-	$query = "INSERT INTO user_data(userEmail,userPassword) VALUES('$email' , '$passwordHash' )";
+				$query = "INSERT INTO user_data(userEmail,userPassword) VALUES('$email' , '$passwordHash' )";
 	
 	if($updateDb = $conn->query($query) or die($conn->error)) {
-		echo "Congrats! <a href="index.php" > Go back to home and login </a> ! ";
+		echo "Congrats! <a href=\"index.php\" > Go back to home and login </a> ! ";
 		echo getcwd();
                
 }
 
         } catch(PDOException $e) {
                 echo 'ERROR: ' . $e->getMessage();
+
         }
 
 
