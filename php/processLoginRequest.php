@@ -19,7 +19,7 @@ $passwordHash = sha1($password);
         if($targetPassword = $conn->query($query) or die($conn->error)) 
         {	
         	echo "password matching";
-        	echo  $targetPassword;
+        	echo  $targetPassword.userPassword;
 		}
 		
 		else 
