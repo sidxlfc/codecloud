@@ -5,7 +5,7 @@
 </head>
 <body>
 <?php 
-echo "sup ";
+
 $email= $_GET["email"];
 $password = $_GET["password"];
 $passwordHash = sha1($password);
@@ -18,21 +18,23 @@ $passwordHash = sha1($password);
                 
         if($targetPassword = $conn->query($query) or die($conn->error)) 
         {
-        	echo "sup". $targetPassword;
-		if ($passwordHash == $targetPassword) {
+        	echo  $targetPassword;
+			if ($passwordHash == $targetPassword) 
+			{
 			echo " Authentication Successful! Redirecting.... ";
 			echo $targetPassword;
-		}
+			}
 			else 
-	{
-	echo "Sorry wrong username and/or password";
-	}
+			{
+			echo "Sorry wrong username and/or password fisrt loop";
+			}
                
 		}
-			else 
-	{
-	echo "Sorry wrong username and/or password";
-	}
+		
+		else 
+		{
+		echo "Sorry wrong username and/or password second loop";
+		}
 	
 
 
