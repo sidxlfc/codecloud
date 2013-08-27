@@ -39,5 +39,9 @@ foreach ($files1 as  $value) {
 	}
 
 ?>
+<form action="openFile.php">
+    <input type="text" name="fileName"/>
+    <input type="submit"/>
+    </form>
 </body>
 </html>
