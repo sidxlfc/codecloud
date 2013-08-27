@@ -34,7 +34,7 @@ $files1 = scandir($dir);
 
 foreach ($files1 as  $value) {
 	
-	echo " <a href='$value'> $value </a> ";
+	echo $value." <br> ";
 	
 	}
 
