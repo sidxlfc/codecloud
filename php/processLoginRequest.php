@@ -23,8 +23,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 	<title></title>
 <? 
 
-$email= $_GET["email"];
-$password = $_GET["password"];
+$email= $_POST["email"];
+$password = $_POST["password"];
 $passwordHash = sha1($password);
 
 

@@ -21,7 +21,7 @@
 	<textarea id="textarea" style="width:600px; height:600px" name="fileContents">
     <?php 
 session_start();
-$fileName=$_GET['fileName'];
+$fileName=$_POST['fileName'];
 $email = $_SESSION['sessionVar'];
 $filePath=  '/var/lib/openshift/52106d8ce0b8cd5b44000013/app-root/data/'.$email."/".$fileName;
 $file = fopen($filePath, "a+") or exit("Unable to open file!");

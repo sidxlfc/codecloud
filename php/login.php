@@ -23,7 +23,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 	<title></title>
 </head>
 <body>
-<form action="processLoginRequest.php">
+<form action="processLoginRequest.php" method="post">
 Email : <input	type="email" name="email"/> <br> 
 
 Password : <input type="password" name ="password"/> <br>	
