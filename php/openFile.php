@@ -21,7 +21,7 @@
 <div class="content" style="width: 950px">
     <div class="column1" style="margin-top: 47px">
         <form action="writeFile.php">
-	<textarea id="textarea" style="width:600px; height:600px">
+	<textarea id="textarea" style="width:600px; height:600px" name="fileContents">
     <?php 
 session_start();
 $fileName=$_GET['fileName'];
