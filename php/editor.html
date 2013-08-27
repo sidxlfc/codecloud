@@ -1,16 +1,10 @@
-
-
-    
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link href="style.css" rel="stylesheet" type="text/css">
-  <title>Code Cloud</title>
+  <title>Ace Bookmarklet Builder</title>
 </head>
 <body>
 
@@ -21,23 +15,9 @@
 <div class="content" style="width: 950px">
     <div class="column1" style="margin-top: 47px">
 	<textarea id="textarea" style="width:600px; height:600px">
-
-    <?php 
-session_start();
-$fileName=$_GET['fileName'];
-$email = $_SESSION['sessionVar'];
-
-$filePath=  '/var/lib/openshift/52106d8ce0b8cd5b44000013/app-root/data/'.$email."/".$fileName;
-$file = fopen($filePath, "r") or exit("Unable to open file!");
-//Output a line of the file until the end is reached
-while(!feof($file))
-  {
-  echo fgets($file). "<br>";
-  }
-fclose($file);
-?>    
-        
-        </textarea>
+function Myfunction() {
+    var flag = true;
+}</textarea>
 
 <br>
     </div>
