@@ -20,12 +20,15 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Code Cloud</title>
 
 </head>
 <body>
+    <form action="openFile.php">
+    <input type="text" name="fileName" placeholder="Enter the name of the file"/>
+    <input type="submit" value="Open"/>
+    </form>
 <?php 
-
 session_start();
 $email = $_SESSION['sessionVar'];
 $_SESSION['sessionVar'] = $email;
@@ -41,9 +44,6 @@ foreach ($files1 as  $value) {
 	}
 
 ?>
-<form action="openFile.php">
-    <input type="text" name="fileName"/>
-    <input type="submit"/>
-    </form>
+
 </body>
 </html>

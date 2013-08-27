@@ -11,6 +11,15 @@ $filePath='/var/lib/openshift/52106d8ce0b8cd5b44000013/app-root/data/'.$email."/
 $handle=fopen($filePath,"w+");
 $x=fwrite($handle,$fileData);
 
+if($x!=NULL)
+{
+    header("Location: myFiles.php");
+			die();
+
+}else
+{
+    echo "Something went wrong. Your file wasn't saved! :( ";
+}
 
 
 ?>    
