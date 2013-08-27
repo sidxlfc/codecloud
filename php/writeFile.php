@@ -1,7 +1,10 @@
+<html>
+<head>  </head>
+<body>
 <?php 
-$fileData=$_GET['fileContents'];
-$fileName=$_GET['fileName'];
-echo $fileData
+$fileData=$_POST['fileContents'];
+$fileName=$_POST['fileName'];
+echo $fileData;
     echo "##############################";
 session_start();
 $email = $_SESSION['sessionVar'];
@@ -10,4 +13,9 @@ echo $email;
 echo $fileName;
  echo "##############################";
 
-?>
+?>    
+    
+</body>
+
+
+</html>

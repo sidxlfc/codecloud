@@ -14,7 +14,7 @@
 
 <div class="content" style="width: 950px">
     <div class="column1" style="margin-top: 47px">
-        <form action="writeFile.php">
+        <form action="writeFile.php" method="post">
             Name of File <input type="text" name="fileName"/> <br>
             <input type="submit" value="Save"/>
             
