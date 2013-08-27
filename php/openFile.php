@@ -20,16 +20,15 @@
 
 <div class="content" style="width: 950px">
     <div class="column1" style="margin-top: 47px">
+        <form action="writeFile.php">
 	<textarea id="textarea" style="width:600px; height:600px">
-
     <?php 
 session_start();
 $fileName=$_GET['fileName'];
 $email = $_SESSION['sessionVar'];
-
 $filePath=  '/var/lib/openshift/52106d8ce0b8cd5b44000013/app-root/data/'.$email."/".$fileName;
-$file = fopen($filePath, "r") or exit("Unable to open file!");
-//Output a line of the file until the end is reached
+$file = fopen($filePath, "r+") or exit("Unable to open file!");
+
 while(!feof($file))
   {
   echo fgets($file);
@@ -37,7 +36,7 @@ while(!feof($file))
 fclose($file);
 ?>    
         
-        </textarea>
+        </textarea> <input type="submit" value="Save"/></form>
 
 <br>
     </div>
