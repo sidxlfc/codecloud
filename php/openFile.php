@@ -1,9 +1,3 @@
-
-
-    
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,6 +15,9 @@
 <div class="content" style="width: 950px">
     <div class="column1" style="margin-top: 47px">
         <form action="writeFile.php">
+            Name of File <input type="text" name="fileName"/> <br>
+            <input type="submit" value="Save"/>
+            
 	<textarea id="textarea" style="width:600px; height:600px" name="fileContents">
     <?php 
 session_start();
@@ -36,7 +33,7 @@ while(!feof($file))
 fclose($file);
 ?>    
         
-        </textarea> <input type="submit" value="Save"/></form>
+        </textarea> </form>
 
 <br>
     </div>
