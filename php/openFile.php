@@ -3,6 +3,7 @@
 <body>
     
 <?php 
+session_start();
 $fileName=$_GET['fileName'];
 $email = $_SESSION['sessionVar'];
 
