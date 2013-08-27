@@ -4,14 +4,14 @@
 <?php 
 $fileData=$_POST['fileContents'];
 $fileName=$_POST['fileName'];
-echo $fileData;
-    echo "##############################";
 session_start();
 $email = $_SESSION['sessionVar'];
-echo $email;
- echo "##############################";
-echo $fileName;
- echo "##############################";
+
+$filePath='/var/lib/openshift/52106d8ce0b8cd5b44000013/app-root/data/'.$email."/".$fileName;
+$handle=fopen($filePath,"+r");
+$x=fwrite($handle,$fileData);
+
+
 
 ?>    
     
