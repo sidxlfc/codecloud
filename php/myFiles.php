@@ -25,7 +25,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 </head>
 <body>
     <form action="openFile.php">
-    <input type="text" name="fileName" placeholder="Enter the name of a new file or enter a name from the list below"/>
+    <p>Enter the Name of a new file or enter a name from the list below</p> <br>
+    <input type="text" name="fileName" placeholder="Enter file name"/>
     <input type="submit" value="Open"/>
     </form>
 <?php 
