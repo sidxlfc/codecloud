@@ -28,7 +28,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 session_start();
 $email = $_SESSION['sessionVar'];
-$_SESSION['sessionVar'] = $email;
+$_SESSION['sessionVar1'] = $email;
   			
 $dir    = '/var/lib/openshift/52106d8ce0b8cd5b44000013/app-root/data/'.$email."/";
 
