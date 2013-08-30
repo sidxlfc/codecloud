@@ -45,7 +45,9 @@ else
 				if($targetEmail==$email)
 				{
 					echo "Sorry this email id/username is already registered! ";
+
 				}
+				
 				else {
 				$path= "/var/lib/openshift/52106d8ce0b8cd5b44000013/app-root/data/".$email;
                 mkdir($path,0777,true);
