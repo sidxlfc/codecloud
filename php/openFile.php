@@ -7,48 +7,41 @@
   <title>Code Cloud</title>
 </head>
 <body>
-
-
 <div id="wrapper">
-
-
 <div class="content" style="width: 950px">
-    <div class="column1" style="margin-top: 47px">
-    <p>Enter the name of the file you wish to save. </p>
+    <div class="column2" style="margin-top: 47px">
+        <p>Enter the name of the file you wish to save. </p>
         <form action="writeFile.php" method="post">
             Name of File <input type="text" name="fileName"/> <br>
-            <input type="submit" value="Save"/>
-            
-	<textarea id="textarea" style="width:600px; height:600px" name="fileContents">
-    <?php 
-session_start();
-$fileName=$_POST['fileName'];
-$email = $_SESSION['sessionVar'];
-$filePath=  '/var/lib/openshift/52106d8ce0b8cd5b44000013/app-root/data/'.$email."/".$fileName;
-$file = fopen($filePath, "a+") or exit("Unable to open file!");
+            <input type="submit" value="Save!"/>
+            <textarea id="textarea" style="width:600px; height:600px" name="fileContents">
+                <?php 
+                    session_start();
+                    $fileName=$_POST['fileName'];
+                    $email = $_SESSION['sessionVar'];
+                    $filePath=  '/var/lib/openshift/52106d8ce0b8cd5b44000013/app-root/data/'.$email."/".$fileName;
+                    $file = fopen($filePath, "a+") or exit("Unable to open file!");
 
-while(!feof($file))
-  {
-  echo fgets($file);
-  }
-fclose($file);
-?>    
+                    while(!feof($file))
+                    {
+                        echo fgets($file);
+                    }
+                    fclose($file);
+                ?>    
         
-        </textarea> </form> <br>
-
-
-        <p>The compiling feature works only for C/C++ right now and uses GCC. The object file is Linux compatible. </p>
-<form action="compileFile.php" method="post">
-    <input type="text" name="fileName" placeholder="helloWorld.c"/> <br>
-    <input type="submit" value="Compile!"/>
-
-</form>
-
-
-<br>
-
+            </textarea> 
+        </form>
+        <br>
     </div>
-   
+    <div class="column1" >
+       <div id="compile">
+            <p>The compiling feature works only for C/C++ right now and uses GCC. The object file is Linux compatible. </p>
+            <form action="compileFile.php" method="post">
+                <input type="text" name="fileName" placeholder="helloWorld.c"/> <br>
+                <input type="submit" value="Compile!"/>
+            </form>
+        </div>
+    </div>
 </div>
 </div>
 

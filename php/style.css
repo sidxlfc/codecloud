@@ -226,5 +226,16 @@ UL.menu-footer LI A:hover {
 }
 
 
+.column2 {
+    clear:right;
+    margin-bottom: 50px;
+}
 
+.ace_editor {
+    top:25px;
+}
 
+.column1 {
+    top: 180px;
+    left: 10px;
+}
