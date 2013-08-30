@@ -37,7 +37,17 @@ else
  try {
                 require_once 'conf.php';
                 $conn = mysqlConnector();
-             	$path= "/var/lib/openshift/52106d8ce0b8cd5b44000013/app-root/data/".$email;
+             	$sth = $conn->prepare("SELECT * FROM user_data WHERE userEmail='$email'");
+				$sth->execute();
+   				$result = $sth->fetch(PDO::FETCH_OBJ);
+				$targetEmail=  $result->userEmail;
+
+				if($targetEmail==$email)
+				{
+					echo "Sorry this email id/username is already registered! ";
+				}
+				else {
+				$path= "/var/lib/openshift/52106d8ce0b8cd5b44000013/app-root/data/".$email;
                 mkdir($path,0777,true);
 
 				$query = "INSERT INTO user_data(userEmail,userPassword) VALUES('$email' , '$passwordHash' )";
@@ -46,6 +56,9 @@ else
 				{
 				echo "Congrats! <a href=\"index.php\" > Go back to home and login </a> ! ";
 				}
+				}
+
+             	
 
      } 
 catch(PDOException $e) 
