@@ -35,7 +35,14 @@ fclose($file);
         
         </textarea> </form>
 
+
 <br>
+<p>The compiling feature works only for C/C++ right now and uses GCC.</p>
+<form action="compileFile.php" method="post">
+    <input type="text" name="fileName" placeholder="helloWorld.c"/> <br>
+
+
+</form>
     </div>
    
 </div>

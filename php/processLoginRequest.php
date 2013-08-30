@@ -54,9 +54,7 @@ $passwordHash = sha1($password);
 
 
     }
-
-
-         catch(PDOException $e) {
+		catch(PDOException $e) {
                 echo 'ERROR: ' . $e->getMessage();
         }
 
