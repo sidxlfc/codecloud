@@ -32,10 +32,11 @@ $x=fwrite($handle,$fileData);
 
 if($x!=NULL)
 {
-	$output=shell_exec('gcc -g -O -c '.$filePath);
+	$output=exec('gcc -g -O -c '.$filePath);
 	echo $output;
-    header("Location: myFiles.php");
-			die();
+    
+    #header("Location: myFiles.php");
+	#		die();
 
 }else
 {
