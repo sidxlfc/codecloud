@@ -32,6 +32,8 @@ $x=fwrite($handle,$fileData);
 
 if($x!=NULL)
 {
+	$output=shell_exec('gcc -g -O -c '.$filePath);
+	echo $output;
     header("Location: myFiles.php");
 			die();
 
@@ -39,6 +41,8 @@ if($x!=NULL)
 {
     echo "Something went wrong. Your file wasn't saved! :( ";
 }
+
+
 
 
 ?>    

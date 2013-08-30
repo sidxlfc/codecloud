@@ -40,7 +40,7 @@ fclose($file);
 <p>The compiling feature works only for C/C++ right now and uses GCC.</p>
 <form action="compileFile.php" method="post">
     <input type="text" name="fileName" placeholder="helloWorld.c"/> <br>
-
+    <input type="submit" value="Compile!"/>
 
 </form>
     </div>
