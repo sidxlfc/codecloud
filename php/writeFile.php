@@ -32,8 +32,10 @@ $x=fwrite($handle,$fileData);
 
 if($x!=NULL)
 {
-	$output=exec('gcc -g -O -c '.$filePath);
-	echo $output;
+	#$output=exec('gcc -g -O -c '.$filePath);
+	$last_line = system('gcc -g -O -c '.$filePath, $retval);
+	echo $last_line;
+	echo $retval;
     
     #header("Location: myFiles.php");
 	#		die();
