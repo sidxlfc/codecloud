@@ -14,6 +14,7 @@
 
 <div class="content" style="width: 950px">
     <div class="column1" style="margin-top: 47px">
+    <p>Enter the name of the file you wish to save. </p>
         <form action="writeFile.php" method="post">
             Name of File <input type="text" name="fileName"/> <br>
             <input type="submit" value="Save"/>
@@ -33,16 +34,19 @@ while(!feof($file))
 fclose($file);
 ?>    
         
-        </textarea> </form>
+        </textarea> </form> <br>
 
 
-<br>
-<p>The compiling feature works only for C/C++ right now and uses GCC.</p>
+        <p>The compiling feature works only for C/C++ right now and uses GCC. The object file is Linux compatible. </p>
 <form action="compileFile.php" method="post">
     <input type="text" name="fileName" placeholder="helloWorld.c"/> <br>
     <input type="submit" value="Compile!"/>
 
 </form>
+
+
+<br>
+
     </div>
    
 </div>
