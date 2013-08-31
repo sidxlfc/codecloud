@@ -20,7 +20,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 <?php
 $fileName=$_POST['fileName'];
 $objectFileName= str_replace('.c', '.o' , $fileName);
-$objectFileName= str_replace('.cpp', '.o' , $fileName);
+#$objectFileName= str_replace('.cpp', '.o' , $fileName);
 
 echo $objectFileName;
 session_start();
@@ -31,13 +31,13 @@ $objectFilePath= '/var/lib/openshift/52106d8ce0b8cd5b44000013/app-root/data/'.$e
 $command='gcc -c '.$sourceFilePath.' -o '.$objectFilePath. ' 2>&1 ';
 #echo $command;
 $output=shell_exec($command);
-#echo $output;
+echo $output;
 
 	
 $file = $objectFilePath;
 
 if (file_exists($file)) {
-	echo $output;
+
     header('Content-Description: File Transfer');
     header('Content-Type: application/octet-stream');
     header('Content-Disposition: attachment; filename='.$objectFileName);
