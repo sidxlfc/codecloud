@@ -29,8 +29,8 @@ $objectFilePath= '/var/lib/openshift/52106d8ce0b8cd5b44000013/app-root/data/'.$e
 $command='gcc -c '.$sourceFilePath.' -o '.$objectFilePath;
 #echo $command;
 exec($command,$output,$return);
-echo $output;
-echo $return;
+print_r($output) ;
+print_r($return);
 	
 $file = $objectFilePath;
 
