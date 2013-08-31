@@ -16,7 +16,8 @@ You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-
+?>
+<?php
 $fileName=$_POST['fileName'];
 $objectFileName= str_replace('.c', '.o' , $fileName);
 $objectFileName= str_replace('.cpp', '.o' , $fileName);
@@ -25,9 +26,9 @@ $objectFileName= str_replace('.cpp', '.o' , $fileName);
 session_start();
 $email = $_SESSION['sessionVar'];
 $sourceFilePath= '/var/lib/openshift/52106d8ce0b8cd5b44000013/app-root/data/'.$email."/".$fileName;
-$objectFilePath= '/var/lib/openshift/52106d8ce0b8cd5b44000013/app-root/data/'.$email."/".$objectFileName.' 2>&1 ';
+$objectFilePath= '/var/lib/openshift/52106d8ce0b8cd5b44000013/app-root/data/'.$email."/".$objectFileName;
 #echo $filePath;
-$command='gcc -c '.$sourceFilePath.' -o '.$objectFilePath;
+$command='gcc -c '.$sourceFilePath.' -o '.$objectFilePath. ' 2>&1 ';
 #echo $command;
 $output=shell_exec($command);
 echo $output;
