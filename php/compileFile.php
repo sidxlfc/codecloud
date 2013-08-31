@@ -25,14 +25,14 @@ $objectFileName= str_replace('.cpp', '.o' , $fileName);
 #echo $objectFileName;
 session_start();
 $email = $_SESSION['sessionVar'];
-$sourceFilePath=  '/var/lib/openshift/52106d8ce0b8cd5b44000013/app-root/data/'.$email."/".$fileName;
+$sourceFilePath= '/var/lib/openshift/52106d8ce0b8cd5b44000013/app-root/data/'.$email."/".$fileName;
 $objectFilePath= '/var/lib/openshift/52106d8ce0b8cd5b44000013/app-root/data/'.$email."/".$objectFileName;
 #echo $filePath;
-$command='gcc -v -c '.$sourceFilePath.' -o '.$objectFilePath;
+$command='gcc  -c '.$sourceFilePath.' -o '.$objectFilePath;
 #echo $command;
-exec($command,$output,$return);
-print_r($output) ;
-print_r($return);
+$output=shell_exec($command);
+print_r($output);
+
 	
 $file = $objectFilePath;
 
