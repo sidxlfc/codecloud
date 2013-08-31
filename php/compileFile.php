@@ -20,15 +20,17 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 <?php
 $fileName=$_POST['fileName'];
 $objectFileName= str_replace('.c', '.o' , $fileName);
-echo $objectFileName;
+#echo $objectFileName;
 session_start();
 $email = $_SESSION['sessionVar'];
 $sourceFilePath=  '/var/lib/openshift/52106d8ce0b8cd5b44000013/app-root/data/'.$email."/".$fileName;
 $objectFilePath= '/var/lib/openshift/52106d8ce0b8cd5b44000013/app-root/data/'.$email."/".$objectFileName;
-echo $filePath;
+#echo $filePath;
 $command='gcc -c '.$sourceFilePath.' -o '.$objectFilePath;
-echo $command;
+#echo $command;
 exec($command,$output,$return);
+echo $output;
+echo $return;
 	
 $file = $objectFilePath;
 
