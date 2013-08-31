@@ -17,7 +17,13 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 ?>
-<?php
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<?
 $fileName=$_POST['fileName'];
 $objectFileName= str_replace('.c', '.o' , $fileName);
 #$objectFileName= str_replace('.cpp', '.o' , $fileName);
@@ -31,7 +37,7 @@ $objectFilePath= '/var/lib/openshift/52106d8ce0b8cd5b44000013/app-root/data/'.$e
 $command='gcc -c '.$sourceFilePath.' -o '.$objectFilePath. ' 2>&1 ';
 #echo $command;
 $output=shell_exec($command);
-echo str_replace("/var/lib/openshift/52106d8ce0b8cd5b44000013/app-root/data/", "\n" , $output);
+echo str_replace("/var/lib/openshift/52106d8ce0b8cd5b44000013/app-root/data/".$email, "<br>" , $output);
 
 	
 $file = $objectFilePath;
@@ -53,3 +59,5 @@ if (file_exists($file)) {
 }
 
 ?>
+</body>
+</html>
