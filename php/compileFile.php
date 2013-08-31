@@ -31,7 +31,7 @@ $objectFilePath= '/var/lib/openshift/52106d8ce0b8cd5b44000013/app-root/data/'.$e
 $command='gcc -c '.$sourceFilePath.' -o '.$objectFilePath. ' 2>&1 ';
 #echo $command;
 $output=shell_exec($command);
-echo $output;
+#echo $output;
 
 	
 $file = $objectFilePath;
