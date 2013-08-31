@@ -28,7 +28,7 @@ $email = $_SESSION['sessionVar'];
 $sourceFilePath= '/var/lib/openshift/52106d8ce0b8cd5b44000013/app-root/data/'.$email."/".$fileName;
 $objectFilePath= '/var/lib/openshift/52106d8ce0b8cd5b44000013/app-root/data/'.$email."/".$objectFileName;
 #echo $filePath;
-$command='gcc -v -c '.$sourceFilePath.' -o '.$objectFilePath;
+$command='gcc -c '.$sourceFilePath.' -o '.$objectFilePath;
 #echo $command;
 $output=shell_exec($command);
 echo $output;
@@ -46,10 +46,10 @@ if (file_exists($file)) {
     header('Cache-Control: must-revalidate');
     header('Pragma: public');
     header('Content-Length: ' . filesize($file));
-    #ob_clean();
-    #flush();
+    ob_clean();
+    flush();
     readfile($file);
-    #exit;
+    exit;
 }
 
 ?>
