@@ -47,7 +47,7 @@ if (file_exists($file)) {
     header('Pragma: public');
     header('Content-Length: ' . filesize($file));
     ob_clean();
-    flush();
+    #flush();
     readfile($file);
     exit;
 }
