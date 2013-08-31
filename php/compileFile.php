@@ -25,8 +25,14 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 <body>
 <?
 $fileName=$_POST['fileName'];
-$objectFileName= str_replace('.c', '.o' , $fileName);
-#$objectFileName= str_replace('.cpp', '.o' , $fileName);
+if(stristr($fileName, '.c') === FALSE)
+{
+	$objectFileName= str_replace('.cpp', '.o' , $fileName);
+}
+else 
+{
+	$objectFileName= str_replace('.c', '.o' , $fileName);
+}
 
 echo $objectFileName;
 session_start();
