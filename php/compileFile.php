@@ -37,6 +37,7 @@ echo $output;
 $file = $objectFilePath;
 
 if (file_exists($file)) {
+	echo $output;
     header('Content-Description: File Transfer');
     header('Content-Type: application/octet-stream');
     header('Content-Disposition: attachment; filename='.basename($file));
