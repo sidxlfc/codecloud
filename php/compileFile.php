@@ -27,8 +27,20 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 $fileName=$_POST['fileName'];
 if(stristr($fileName, '.cpp') === FALSE)
 {
+
+	if(stristr($fileName, '.java') === FALSE)
+{
+
 	$objectFileName= str_replace('.c', '.o' , $fileName);
-	
+}
+
+
+else
+{
+
+	$objectFileName= str_replace('.java', '.class' , $fileName);
+}
+
 }
 else 
 {
@@ -38,11 +50,24 @@ session_start();
 $email = $_SESSION['sessionVar'];
 $sourceFilePath= '/var/lib/openshift/52106d8ce0b8cd5b44000013/app-root/data/'.$email."/".$fileName;
 $objectFilePath= '/var/lib/openshift/52106d8ce0b8cd5b44000013/app-root/data/'.$email."/".$objectFileName;
+
+if(stristr($fileName, '.java') === FALSE){
+
 $command='gcc -c '.$sourceFilePath.' -o '.$objectFilePath. ' 2>&1 ';
 $output=shell_exec($command);
 echo str_replace("/var/lib/openshift/52106d8ce0b8cd5b44000013/app-root/data/".$email."/", "<br>" , $output);
-
 $file = $objectFilePath;
+}
+
+else{
+
+$command='javac '.$sourceFilePath.' -class '.$objectFilePath. ' 2>&1 ';
+$output=shell_exec($command);
+echo str_replace("/var/lib/openshift/52106d8ce0b8cd5b44000013/app-root/data/".$email."/", "<br>" , $output);
+$file = $objectFilePath;
+}
+
+
 
 if (file_exists($file)) {
 
